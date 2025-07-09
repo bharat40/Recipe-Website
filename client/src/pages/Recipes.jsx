@@ -23,7 +23,7 @@ const Recipes = () => {
                 {
                     recipes.length > 0 && recipes.map((recipe) => {
                         return (
-                            <RecipeCard key={recipe._id} title={recipe.title} time={recipe.time} likes={recipe.likes} coverImg={recipe.coverImg} />
+                            <RecipeCard key={recipe._id} title={recipe.title} time={recipe.time} likes={recipe.likes} coverImg={recipe.coverImg} id={recipe._id} />
                         )
                     })
                 }

@@ -7,6 +7,8 @@ import Footer from "./components/Footer.jsx";
 import LoginSignup from "./pages/LoginSignup.jsx";
 import ShareRecipe from "./pages/ShareRecipe.jsx";
 import MyRecipes from "./pages/MyRecipes.jsx";
+import EditRecipe from "./pages/EditRecipe.jsx";
+import SingleRecipe from "./pages/SingleRecipe.jsx";
 
 const App = () => {
   return (
@@ -18,6 +20,8 @@ const App = () => {
         <Route path="/loginSignup" element={<LoginSignup />} />
         <Route path="/share-recipe" element={<ShareRecipe />} />
         <Route path="/my-recipes" element={<MyRecipes />} />
+        <Route path="/edit-recipe" element={<EditRecipe />} />
+        <Route path="/recipe/:id" element={<SingleRecipe />} />
       </Routes>
       <Footer />
     </BrowserRouter>
