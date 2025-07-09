@@ -7,7 +7,7 @@ router.get('/', getRecipes);
 router.post('/', upload.single('coverImg'), verifyToken, addRecipe);
 router.get('/my', verifyToken, getUserRecipe);
 router.get('/:id', getRecipe);
-router.put('/:id', editRecipe);
+router.put('/:id', upload.single('coverImg'), verifyToken, editRecipe);
 router.delete('/:id', deleteRecipe);
 
 module.exports = router;

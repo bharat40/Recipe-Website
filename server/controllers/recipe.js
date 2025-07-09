@@ -62,13 +62,14 @@ const addRecipe = async (req, res) => {
 
 const editRecipe = async (req, res) => {
     try {
-        const { title, ingredients, instructions, time, coverImg } = req.body;
+        const { title, ingredients, instructions, time } = req.body;
         const recipeId = req.params.id;
+        const coverImg = req.file;
         const recipe = await recipeModel.findById(recipeId);
         if (!recipe) {
             return sendError(res, "Recipe not found", 404);
         }
-        const updatedRecipe = await recipeModel.findByIdAndUpdate(recipeId, { title, ingredients, instructions, time, coverImg }, { new: true });
+        const updatedRecipe = await recipeModel.findByIdAndUpdate(recipeId, { title, ingredients, instructions, time, coverImg: coverImg.filename }, { new: true });
         return sendSuccess(res, "Updated successfully", updatedRecipe);
     } catch (error) {
         return sendError(res, error.message, error);

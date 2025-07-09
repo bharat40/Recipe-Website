@@ -20,7 +20,7 @@ const App = () => {
         <Route path="/loginSignup" element={<LoginSignup />} />
         <Route path="/share-recipe" element={<ShareRecipe />} />
         <Route path="/my-recipes" element={<MyRecipes />} />
-        <Route path="/edit-recipe" element={<EditRecipe />} />
+        <Route path="/edit-recipe/:id" element={<EditRecipe />} />
         <Route path="/recipe/:id" element={<SingleRecipe />} />
       </Routes>
       <Footer />

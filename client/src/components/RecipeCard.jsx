@@ -4,7 +4,9 @@ import { useNavigate } from 'react-router-dom';
 const RecipeCard = ({ title, time, coverImg, likes, path = false, id }) => {
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate(`/recipe/${id}`);
+        if (!path) {
+            navigate(`/recipe/${id}`);
+        }
     }
     return (
         <div className='w-[250px] h-[250px] bg-gray-100 border border-gray-100 shadow shadow-gray-50 hover:scale-105 duration-300' onClick={handleClick}>
@@ -19,7 +21,7 @@ const RecipeCard = ({ title, time, coverImg, likes, path = false, id }) => {
                     {
                         path && (
                             <div>
-                                <span onClick={() => navigate("/edit-recipe")}>✏️</span>
+                                <span onClick={() => navigate(`/edit-recipe/${id}`)}>✏️</span>
                                 <span>🗑️</span>
                             </div>
                         )

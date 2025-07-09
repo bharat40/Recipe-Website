@@ -7,7 +7,6 @@ const SingleRecipe = () => {
     const [recipe, setRecipe] = useState([]);
     const getRecipe = async () => {
         const response = await axios.get(`http://localhost:5000/recipe/${id}`);
-        console.log(response.data.data);
         setRecipe(response.data.data);
     }
     useEffect(() => {
